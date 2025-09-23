@@ -1,7 +1,6 @@
 "use client";
 
 // This page uses React hooks (useState), so it must be a Client Component in Next.js App Router.
-// The "use client" directive above fixes the error you saw.
 import { useState } from "react";
 import { Car, House, Clock, CreditCard, MapPin, Shield, Menu, X, ArrowRight, CheckCircle2, DollarSign, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,97 +8,103 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-// DriveShare Parking — simple concept landing page
-// HCI focus: communicates value prop, primary flows, and policies at a glance
 
 export default function DriveShareLanding() {
   const [open, setOpen] = useState(false);
   const [role, setRole] = useState<"driver" | "host">("driver");
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
-      {/* Nav */}
-      <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5" />
-            <span className="font-semibold">DriveShare</span>
+
+return (
+  <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
+    {/* Nav */}
+    <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Sparkles className="h-5 w-5" />
+          <span className="font-semibold">DriveShare</span>
+        </div>
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          <a href="#idea" className="hover:opacity-70">Idea</a>
+          <a href="#how" className="hover:opacity-70">How it works</a>
+          <a href="#benefits" className="hover:opacity-70">Benefits</a>
+          <a href="#safety" className="hover:opacity-70">Safety</a>
+          <a href="/analysis" className="hover:opacity-70 font-medium">Research Analysis</a>
+        </nav>
+        <div className="flex items-center gap-2">
+          <Button variant="ghost" className="hidden md:inline-flex" onClick={() => {setRole("driver"); setOpen(true);}}>I'm a Driver</Button>
+          <Button className="hidden md:inline-flex" onClick={() => {setRole("host"); setOpen(true);}}>I'm a Homeowner</Button>
+          <Button variant="ghost" className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="Open">
+            {open ? <X className="h-5 w-5"/> : <Menu className="h-5 w-5"/>}
+          </Button>
+        </div>
+      </div>
+      {/* Mobile sheet */}
+      {open && (
+        <div className="md:hidden border-t bg-white">
+          <div className="px-4 py-3 flex flex-col gap-3">
+            <a href="#idea" onClick={()=>setOpen(false)} className="py-2">Idea</a>
+            <a href="#how" onClick={()=>setOpen(false)} className="py-2">How it works</a>
+            <a href="#benefits" onClick={()=>setOpen(false)} className="py-2">Benefits</a>
+            <a href="#safety" onClick={()=>setOpen(false)} className="py-2">Safety</a>
+            <a href="/analysis" onClick={()=>setOpen(false)} className="py-2 font-medium">Research Analysis</a>
+            <div className="flex gap-2 pt-2">
+              <Button variant="secondary" onClick={() => {setRole("driver");}}>I'm a Driver</Button>
+              <Button onClick={() => {setRole("host");}}>I'm a Homeowner</Button>
+            </div>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#idea" className="hover:opacity-70">Idea</a>
-            <a href="#how" className="hover:opacity-70">How it works</a>
-            <a href="#benefits" className="hover:opacity-70">Benefits</a>
-            <a href="#safety" className="hover:opacity-70">Safety</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" className="hidden md:inline-flex" onClick={() => {setRole("driver"); setOpen(true);}}>I'm a Driver</Button>
-            <Button className="hidden md:inline-flex" onClick={() => {setRole("host"); setOpen(true);}}>I'm a Homeowner</Button>
-            <Button variant="ghost" className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="Open">
-              {open ? <X className="h-5 w-5"/> : <Menu className="h-5 w-5"/>}
+        </div>
+      )}
+    </header>
+
+
+    {/* Hero */}
+    <section id="idea" className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+      <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            Park on driveways, <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent">not meters</span>.
+          </h1>
+          <p className="mt-4 text-lg text-slate-600">
+            DriveShare connects drivers with nearby private driveways. Hosts earn passive income. Drivers save money and time. Availability windows keep neighborhoods orderly—violations are tow‑eligible per host terms.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button size="lg" onClick={() => {setRole("driver"); setOpen(true);}}>Find a spot <ArrowRight className="ml-2 h-4 w-4"/></Button>
+            <Button size="lg" variant="secondary" onClick={() => {setRole("host"); setOpen(true);}}>List your driveway</Button>
+            <Button size="lg" asChild>
+              <a href="/analysis">View Research Analysis</a>
             </Button>
           </div>
+          <ul className="mt-6 space-y-2 text-sm text-slate-600">
+            <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4"/> Cheaper than city meters (host‑set pricing)</li>
+            <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4"/> Real‑time availability windows</li>
+            <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4"/> Simple cashless payments</li>
+          </ul>
         </div>
-        {/* Mobile sheet */}
-        {open && (
-          <div className="md:hidden border-t bg-white">
-            <div className="px-4 py-3 flex flex-col gap-3">
-              <a href="#idea" onClick={()=>setOpen(false)} className="py-2">Idea</a>
-              <a href="#how" onClick={()=>setOpen(false)} className="py-2">How it works</a>
-              <a href="#benefits" onClick={()=>setOpen(false)} className="py-2">Benefits</a>
-              <a href="#safety" onClick={()=>setOpen(false)} className="py-2">Safety</a>
-              <div className="flex gap-2 pt-2">
-                <Button variant="secondary" onClick={() => {setRole("driver");}}>I'm a Driver</Button>
-                <Button onClick={() => {setRole("host");}}>I'm a Homeowner</Button>
-              </div>
-            </div>
-          </div>
-        )}
-      </header>
 
-      {/* Hero */}
-      <section id="idea" className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Park on driveways, <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent">not meters</span>.
-            </h1>
-            <p className="mt-4 text-lg text-slate-600">
-              DriveShare connects drivers with nearby private driveways. Hosts earn passive income. Drivers save money and time. Availability windows keep neighborhoods orderly—violations are tow‑eligible per host terms.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button size="lg" onClick={() => {setRole("driver"); setOpen(true);}}>Find a spot <ArrowRight className="ml-2 h-4 w-4"/></Button>
-              <Button size="lg" variant="secondary" onClick={() => {setRole("host"); setOpen(true);}}>List your driveway</Button>
-            </div>
-            <ul className="mt-6 space-y-2 text-sm text-slate-600">
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4"/> Cheaper than city meters (host‑set pricing)</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4"/> Real‑time availability windows</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4"/> Simple cashless payments</li>
-            </ul>
-          </div>
 
-          {/* Placeholder visual */}
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl border bg-white shadow-sm grid place-items-center p-6">
-              <div className="grid grid-cols-2 gap-4 w-full">
-                <Card className="border-dashed">
-                  <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><MapPin className="h-4 w-4"/> Nearby Driveways</CardTitle></CardHeader>
-                  <CardContent className="text-sm text-slate-600">123 Oak St — $2.50/30min<br/> 88 Pine Ave — $4/hr<br/> 12 Sunset Blvd — $6 flat</CardContent>
-                </Card>
-                <Card className="border-dashed">
-                  <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><Clock className="h-4 w-4"/> Availability</CardTitle></CardHeader>
-                  <CardContent className="text-sm text-slate-600">Today 6–10pm<br/> Weekdays 8am–5pm<br/> Weekends 24/7</CardContent>
-                </Card>
-                <Card className="col-span-2 border-dashed">
-                  <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><CreditCard className="h-4 w-4"/> Book & Pay</CardTitle></CardHeader>
-                  <CardContent className="text-sm text-slate-600">Tap to reserve → Navigate → Park. Digital receipt and host rules included.</CardContent>
-                </Card>
-              </div>
+        {/* Placeholder visual */}
+        <div className="relative">
+          <div className="aspect-[4/3] rounded-2xl border bg-white shadow-sm grid place-items-center p-6">
+            <div className="grid grid-cols-2 gap-4 w-full">
+              <Card className="border-dashed">
+                <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><MapPin className="h-4 w-4"/> Nearby Driveways</CardTitle></CardHeader>
+                <CardContent className="text-sm text-slate-600">123 Oak St — $2.50/30min<br/> 88 Pine Ave — $4/hr<br/> 12 Sunset Blvd — $6 flat</CardContent>
+              </Card>
+              <Card className="border-dashed">
+                <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><Clock className="h-4 w-4"/> Availability</CardTitle></CardHeader>
+                <CardContent className="text-sm text-slate-600">Today 6–10pm<br/> Weekdays 8am–5pm<br/> Weekends 24/7</CardContent>
+              </Card>
+              <Card className="col-span-2 border-dashed">
+                <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><CreditCard className="h-4 w-4"/> Book & Pay</CardTitle></CardHeader>
+                <CardContent className="text-sm text-slate-600">Tap to reserve → Navigate → Park. Digital receipt and host rules included.</CardContent>
+              </Card>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* How it works */}
+    {/* How it works */}
       <section id="how" className="bg-slate-50 border-t border-b">
         <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
           <h2 className="text-2xl md:text-3xl font-bold">How it works</h2>
@@ -214,6 +219,7 @@ export default function DriveShareLanding() {
             <a href="#idea" className="hover:opacity-70">Concept</a>
             <a href="#how" className="hover:opacity-70">How it works</a>
             <a href="#safety" className="hover:opacity-70">Policy</a>
+            <a href="/analysis" className="hover:opacity-70">Research Analysis</a>
           </div>
         </div>
       </footer>
