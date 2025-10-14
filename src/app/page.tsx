@@ -47,6 +47,7 @@ return (
             <a href="#benefits" onClick={()=>setOpen(false)} className="py-2">Benefits</a>
             <a href="#safety" onClick={()=>setOpen(false)} className="py-2">Safety</a>
             <a href="/analysis" onClick={()=>setOpen(false)} className="py-2 font-medium">Research Analysis</a>
+            <a href="/features" className="hover:opacity-70">Features</a>
             <div className="flex gap-2 pt-2">
               <Button variant="secondary" onClick={() => {setRole("driver");}}>I'm a Driver</Button>
               <Button onClick={() => {setRole("host");}}>I'm a Homeowner</Button>
