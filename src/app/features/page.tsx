@@ -1,8 +1,51 @@
 "use client";
 
-import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
-import { Car, House, MapPin, Clock, Calendar, Route, CreditCard, Home, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
+import { Car, House, MapPin, Clock, Calendar, Route, CreditCard, Home, CheckCircle2, Shield, BarChart3, LayoutDashboard } from "lucide-react";
+
+function FeatureTile({
+  title,
+  description,
+  icon,
+  src,
+  alt,
+  priority = false,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  src: string;
+  alt: string;
+  priority?: boolean;
+}) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">{icon}{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="text-sm text-slate-600">
+        <p>{description}</p>
+        <div className="mt-3">
+          <div className="relative w-full overflow-hidden rounded-lg border">
+            <div className="aspect-[8/5] relative">
+              <Image
+                src={src}
+                alt={alt}
+                width={800}
+                height={800}
+                className="w-full h-auto object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                priority={priority}
+                />
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function FeaturesPage() {
   return (
@@ -13,103 +56,115 @@ export default function FeaturesPage() {
           <Link href="/" className="text-sm underline">← Back to Home</Link>
         </div>
 
-        {/* Drivers Section */}
+        {/* DRIVERS */}
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold flex items-center gap-2"><Car className="h-5 w-5 text-emerald-600"/> For Drivers</h2>
-          <p className="text-slate-600 mt-2 mb-6">Seamlessly find, book, and navigate to driveways near your destination.</p>
+          <h2 className="text-2xl font-semibold flex items-center gap-2">
+            <Car className="h-5 w-5 text-emerald-600" /> For Drivers
+          </h2>
+          <p className="text-slate-600 mt-2 mb-6">
+            Find, book, and navigate to driveways near your destination.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Home className="h-5 w-5"/> Home Page</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Simple interface with “Find Spot” button, recent bookings, and quick filters.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5"/> Spot Selection</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Interactive map showing available driveways, pricing, and distance filters.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Clock className="h-5 w-5"/> Time Selection</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Choose custom parking durations and availability windows directly in the app.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Route className="h-5 w-5"/> Directions to Spot</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Built-in navigation support through Google Maps or Apple Maps.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><CreditCard className="h-5 w-5"/> Secure Payment</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Integrated cashless payments with instant digital receipts and booking confirmation.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><CheckCircle2 className="h-5 w-5"/> Booking Summary</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Quick review screen summarizing time, address, and total cost before final confirmation.</CardContent>
-            </Card>
+            <FeatureTile
+              title="Map Interface"
+              description="See nearby driveways with price bubbles; pan and zoom the area."
+              icon={<MapPin className="h-5 w-5" />}
+              src="/features/driver-map.png"
+              alt="Driver map with pins and price"
+              priority
+            />
+            <FeatureTile
+              title="Spot Selection"
+              description="Browse nearby driveways on the map, compare prices, and tap to book instantly."
+              icon={<MapPin className="h-5 w-5" />}
+              src="/features/driver-spot-selection.png"
+              alt="Zoomed-in map with green pins showing driveway prices"
+            />
+            <FeatureTile
+              title="Time Selection"
+              description="Pick start/end times or quick presets for your reservation."
+              icon={<Clock className="h-5 w-5" />}
+              src="/features/driver-time-selection.png"
+              alt="Time selection calendar and sliders"
+            />
+            <FeatureTile
+              title="Booking Confirmed"
+              description="Clear summary with location, date, time, total cost, and ‘Get Directions’."
+              icon={<CheckCircle2 className="h-5 w-5" />}
+              src="/features/driver-booking-confirmed.png"
+              alt="Booking confirmation screen"
+            />
+            <FeatureTile
+              title="Directions to Spot"
+              description="Turn-by-turn route to your reserved driveway."
+              icon={<Route className="h-5 w-5" />}
+              src="/features/driver-directions.png"
+              alt="Navigation route to driveway"
+            />
+            <FeatureTile
+              title="Cashless Payment"
+              description="Pay securely in-app; receipts saved to your bookings."
+              icon={<CreditCard className="h-5 w-5" />}
+              src="/features/driver-booking-confirmed.png"
+              alt="Booking confirmation shows paid status"
+            />
           </div>
         </section>
 
-        {/* Homeowners Section */}
+        {/* HOMEOWNERS */}
         <section>
-          <h2 className="text-2xl font-semibold flex items-center gap-2"><House className="h-5 w-5 text-cyan-600"/> For Homeowners</h2>
-          <p className="text-slate-600 mt-2 mb-6">Effortlessly rent your driveway, set schedules, and manage your listings.</p>
+          <h2 className="text-2xl font-semibold flex items-center gap-2">
+            <House className="h-5 w-5 text-cyan-600" /> For Homeowners
+          </h2>
+          <p className="text-slate-600 mt-2 mb-6">
+            List your driveway, set schedules, and track earnings.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Home className="h-5 w-5"/> Listing Page</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Upload driveway photos, add address, and set pricing per hour or day.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Calendar className="h-5 w-5"/> Availability Schedule</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Set time windows when your driveway is available — daily, weekly, or custom.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5"/> Driveway Info</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Add notes like “Fits SUV,” “No blocking gate,” or “Electric charging available.”</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><CreditCard className="h-5 w-5"/> Rent & Payout</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">View upcoming reservations and receive automatic payouts to your account.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Shield className="h-5 w-5"/> Safety & Control</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Host verification, time windows, and visibility control ensure security and peace of mind.</CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Route className="h-5 w-5"/> Host Dashboard</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-600">Monitor your listings, earnings, and user ratings in one intuitive dashboard.</CardContent>
-            </Card>
+            <FeatureTile
+              title="Host Dashboard"
+              description="Manage active listings and pause/reactivate anytime."
+              icon={<LayoutDashboard className="h-5 w-5" />}
+              src="/features/host-dashboard.png"
+              alt="Host dashboard with listings overview"
+              priority
+            />
+            <FeatureTile
+              title="List Your Driveway"
+              description="Add address, rate, spot type, upload photos, and publish."
+              icon={<Home className="h-5 w-5" />}
+              src="/features/host-renting-page.png"
+              alt="List your driveway form"
+            />
+            <FeatureTile
+              title="Driveway Info"
+              description="Detailed page with photo, rules, and special notes for drivers."
+              icon={<MapPin className="h-5 w-5" />}
+              src="/features/host-driveway-info.png"
+              alt="Driveway details"
+            />
+            <FeatureTile
+              title="Availability Schedule"
+              description="Choose days and time windows; add morning/evening blocks."
+              icon={<Calendar className="h-5 w-5" />}
+              src="/features/host-availability.png"
+              alt="Availability calendar"
+            />
+            <FeatureTile
+              title="Safety & Control"
+              description="Verified listing, require driver photo ID, lighting checks, and support."
+              icon={<Shield className="h-5 w-5" />}
+              src="/features/host-safety.png"
+              alt="Safety and control options"
+            />
+            <FeatureTile
+              title="Earnings Dashboard"
+              description="Weekly earnings chart and payout history; transfer to bank."
+              icon={<BarChart3 className="h-5 w-5" />}
+              src="/features/host-earnings.png"
+              alt="Earnings dashboard with chart"
+            />
           </div>
         </section>
       </div>
