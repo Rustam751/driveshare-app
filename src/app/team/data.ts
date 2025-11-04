@@ -47,7 +47,7 @@ export const teamMembers: Member[] = [
     avatar: "/team/bart.jpg",
     bio: "Explores data model, payments, and availability scheduling; supports research evidence collection.",
     blogs: [
-      { title: "Blog – Technical Feasibility", href: "#" },
+      { title: "Blog Page", href: "https://bartbeltran1.blogspot.com/" },
     ],
   },
   {
