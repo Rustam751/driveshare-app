@@ -30,6 +30,8 @@ return (
           <a href="#safety" className="hover:opacity-70">Safety</a>
           <a href="/features" className="hover:opacity-70">Features</a>
           <a href="/analysis" className="hover:opacity-70">Research Analysis</a>
+          <a href="/team" className="hover:opacity-70">Team</a>
+          <a href="/deliverables" className="hover:opacity-70">Deliverables</a>
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="ghost" className="hidden md:inline-flex" onClick={() => {setRole("driver"); setOpen(true);}}>I'm a Driver</Button>
@@ -49,6 +51,8 @@ return (
             <a href="#safety" onClick={()=>setOpen(false)} className="py-2">Safety</a>
             <a href="/features" onClick={()=>setOpen(false)} className="py-2 font-medium">Features</a>
             <a href="/analysis" onClick={()=>setOpen(false)} className="py-2 font-medium">Research Analysis</a>
+            <a href="/team" onClick={()=>setOpen(false)} className="py-2">Team</a>
+            <a href="/deliverables" onClick={()=>setOpen(false)} className="py-2">Deliverables</a>
             <div className="flex gap-2 pt-2">
               <Button variant="secondary" onClick={() => {setRole("driver");}}>I'm a Driver</Button>
               <Button onClick={() => {setRole("host");}}>I'm a Homeowner</Button>
@@ -222,6 +226,8 @@ return (
             <a href="#how" className="hover:opacity-70">How it works</a>
             <a href="#safety" className="hover:opacity-70">Policy</a>
             <a href="/analysis" className="hover:opacity-70">Research Analysis</a>
+            <a href="/team" className="hover:opacity-70">Team</a>
+            <a href="/deliverables" className="hover:opacity-70">Deliverables</a>
           </div>
         </div>
       </footer>
