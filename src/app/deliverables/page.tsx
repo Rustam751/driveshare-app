@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, FolderGit2, Film } from "lucide-react";
 
 const files = [
-  { title: "Project Proposal (DOCX)", path: "/deliverables/HCI-Project-Proposal.docx" },
-  { title: "Medium‑Fidelity Prototype README (DOCX)", path: "/deliverables/DriveShare-MidFi-README.docx" },
-  { title: "Medium‑Fidelity Prototype & Testing Report (DOCX)", path: "/deliverables/DriveShare-MidFi-Testing-Report.docx" },
+  { title: "Project Proposal (PDF)", path: "/deliverables/HCI-Project-Proposal.pdf" },
+  { title: "Low-Fidelity & Evaluation Report (PDF)", path: "/deliverables/Lo-Fidelity & Evaluation Report.pdf" },
+  { title: "Medium‑Fidelity Prototype README (PDF)", path: "/deliverables/DriveShare-MidFi-README.pdf" },
+  { title: "Medium‑Fidelity Prototype & Testing Report (PDF)", path: "/deliverables/DriveShare-MidFi-Testing-Report.pdf" },
+  { title: "High-Fidelity Prototype & Heuristic Evaluation Report (PDF)", path: "/deliverables/DriveShare Hi-Fidelity Prototype & Heuristic Evaluation Report.pdf" },
+  { title: "High-Fidelity Prototype README (PDF)", path: "/deliverables/DriveShare Hi-Fidelity Prototype README and Demo Video.pdf" },
 ];
 
 const externals = [
