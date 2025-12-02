@@ -13,6 +13,8 @@ const externals = [
   { title: "Figma Prototype", href: "https://www.figma.com/board/eJV0RLI4pfxEZ70YkDWSWi/Fall2025-HCI?node-id=0-1&p=f", icon: Film },
   { title: "Live Site / Landing", href: "/", icon: ExternalLink },
   { title: "Research Analysis Page", href: "/analysis", icon: FolderGit2 },
+  { title: "Consept Video", href: "https://www.youtube.com/watch?v=ENpX4WJylvM", icon: Film },
+  { title: "Demo Video", href: "https://youtu.be/2MR8o-YIrKk", icon: Film },
 ];
 
 export default function DeliverablesPage() {
