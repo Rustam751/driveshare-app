@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DriveShare — Peer-to-Peer Parking Marketplace
 
-## Getting Started
+DriveShare is a web prototype for a peer-to-peer parking marketplace where homeowners can rent out unused driveway space and drivers can reserve affordable parking spots.
 
-First, run the development server:
+This project was built as a human-computer interaction and product design prototype, focusing on user flows, marketplace trust, driver/homeowner needs, and a clean responsive interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Live Demo: https://driveshare-app.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Problem
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Urban drivers often waste time circling for parking, while many homeowners have unused driveway space. DriveShare explores a two-sided marketplace where:
 
-## Learn More
+- Drivers can find cheaper, nearby private parking
+- Homeowners can earn passive income from unused driveway space
+- Reservations are time-boxed to reduce conflicts and overstay issues
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### For Drivers
 
-## Deploy on Vercel
+- Search for nearby driveway parking
+- View price and availability windows
+- Understand house rules before booking
+- Reserve a spot and follow navigation-style instructions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### For Homeowners
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- List driveway availability
+- Set price and time windows
+- Communicate parking rules clearly
+- Earn income from unused space
+
+### Product / HCI Features
+
+- Driver and homeowner user flows
+- Research analysis page
+- Feature exploration page
+- Team and deliverables pages
+- Responsive layout for desktop and mobile
+- Clear trust, safety, and policy messaging
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **UI:** React, Tailwind CSS
+- **Icons:** Lucide React
+- **Design Focus:** HCI, UX research, product prototyping
+- **Deployment:** Vercel
+
+---
+
+## My Contributions
+
+I designed and implemented the DriveShare prototype as a product-focused web application.
+
+My work included:
+
+- Defining the product concept and two-sided marketplace flow
+- Designing driver and homeowner user experiences
+- Building the landing page and navigation structure
+- Creating research, feature, team, and deliverables pages
+- Implementing responsive UI with Next.js, React, and Tailwind
+- Translating HCI research findings into product features
+
+---
+
+## Project Structure
+
+```text
+driveshare-app/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx
+│   │   ├── features/
+│   │   ├── analysis/
+│   │   ├── team/
+│   │   └── deliverables/
+│   ├── components/
+│   └── lib/
+├── public/
+├── package.json
+└── README.md
