@@ -15,7 +15,6 @@ export const teamMembers: Member[] = [
     slug: "koji-miura",
     name: "Koji Miura",
     role: "Team Lead",
-    email: "kmiura@sfsu.edu",
     avatar: "/team/koji.jpg",
     bio: "Coordinates research, synthesizes insights, and manages milestones across prototype phases.",
     blogs: [
@@ -27,7 +26,7 @@ export const teamMembers: Member[] = [
     slug: "rustam-mukhtarov",
     name: "Rustam Mukhtarov",
     role: "Front‑End Developer",
-    email: "rmukhtarov@sfsu.edu",
+    email: "rustam@mukhtarov.dev",
     avatar: "/team/rustam.png",
     bio: "Builds the website, app and interactive artifacts; designs driver/host flows and HCI documentation.",
     blogs: [
@@ -43,7 +42,6 @@ export const teamMembers: Member[] = [
     slug: "bart-beltran",
     name: "Bart Beltran",
     role: "Back‑End Developer",
-    email: "bbeltran4@sfsu.edu",
     avatar: "/team/bart.jpg",
     bio: "Explores data model, payments, and availability scheduling; supports research evidence collection.",
     blogs: [
@@ -54,7 +52,6 @@ export const teamMembers: Member[] = [
     slug: "sparsh-nayak",
     name: "Sparsh Nayak",
     role: "Full‑Stack Developer",
-    email: "snayak2@sfsu.edu",
     avatar: "/team/sparsh.jpg",
     bio: "Prototyping contributor; bridges front‑end and back‑end concerns; ensures research artifacts are linked.",
     blogs: [
