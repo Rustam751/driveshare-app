@@ -1,9 +1,22 @@
 "use client";
 
-import Link from "next/link";
+import {
+  BarChart3,
+  Calendar,
+  Car,
+  CheckCircle2,
+  Clock,
+  CreditCard,
+  Home,
+  House,
+  LayoutDashboard,
+  MapPin,
+  Route,
+  Shield,
+} from "lucide-react";
 import Image from "next/image";
-import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
-import { Car, House, MapPin, Clock, Calendar, Route, CreditCard, Home, CheckCircle2, Shield, BarChart3, LayoutDashboard } from "lucide-react";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 function FeatureTile({
   title,
@@ -23,7 +36,10 @@ function FeatureTile({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">{icon}{title}</CardTitle>
+        <CardTitle className="flex items-center gap-2">
+          {icon}
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="text-sm text-slate-600">
         <p>{description}</p>
@@ -38,7 +54,7 @@ function FeatureTile({
                 className="w-full h-auto object-contain"
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 priority={priority}
-                />
+              />
             </div>
           </div>
         </div>
@@ -52,11 +68,16 @@ export default function FeaturesPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-20">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-3xl md:text-4xl font-bold">DriveShare App Features</h1>
-          <Link href="/" className="text-sm underline">← Back to Home</Link>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            DriveShare App Features
+          </h1>
+          <Link href="/" className="text-sm underline">
+            ← Back to Home
+          </Link>
         </div>
         <p className="mb-10 rounded-lg border bg-white px-4 py-3 text-sm text-slate-700">
-          These are concept features. None of them is implemented, and the pictures are illustrations, not screenshots of a working app.
+          These are concept features. None of them is implemented, and the
+          pictures are illustrations, not screenshots of a working app.
         </p>
 
         {/* DRIVERS */}

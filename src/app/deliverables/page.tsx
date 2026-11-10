@@ -1,22 +1,48 @@
+import { ExternalLink, FileText, Film, FolderGit2 } from "lucide-react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, FolderGit2, Film } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const files = [
-  { title: "Project Proposal (PDF)", path: "/deliverables/HCI-Project-Proposal.pdf" },
-  { title: "Low-Fidelity & Evaluation Report (PDF)", path: "/deliverables/Lo-Fidelity & Evaluation Report.pdf" },
-  { title: "Medium‑Fidelity Prototype README (PDF)", path: "/deliverables/DriveShare-MidFi-README.pdf" },
-  { title: "Medium‑Fidelity Prototype & Testing Report (PDF)", path: "/deliverables/DriveShare-MidFi-Testing-Report.pdf" },
-  { title: "High-Fidelity Prototype & Heuristic Evaluation Report (PDF)", path: "/deliverables/DriveShare Hi-Fidelity Prototype & Heuristic Evaluation Report.pdf" },
-  { title: "High-Fidelity Prototype README (PDF)", path: "/deliverables/DriveShare Hi-Fidelity Prototype README and Demo Video.pdf" },
+  {
+    title: "Project Proposal (PDF)",
+    path: "/deliverables/HCI-Project-Proposal.pdf",
+  },
+  {
+    title: "Low-Fidelity & Evaluation Report (PDF)",
+    path: "/deliverables/Lo-Fidelity & Evaluation Report.pdf",
+  },
+  {
+    title: "Medium‑Fidelity Prototype README (PDF)",
+    path: "/deliverables/DriveShare-MidFi-README.pdf",
+  },
+  {
+    title: "Medium‑Fidelity Prototype & Testing Report (PDF)",
+    path: "/deliverables/DriveShare-MidFi-Testing-Report.pdf",
+  },
+  {
+    title: "High-Fidelity Prototype & Heuristic Evaluation Report (PDF)",
+    path: "/deliverables/DriveShare Hi-Fidelity Prototype & Heuristic Evaluation Report.pdf",
+  },
+  {
+    title: "High-Fidelity Prototype README (PDF)",
+    path: "/deliverables/DriveShare Hi-Fidelity Prototype README and Demo Video.pdf",
+  },
 ];
 
 const externals = [
-  { title: "FigJam board", href: "https://www.figma.com/board/eJV0RLI4pfxEZ70YkDWSWi/Fall2025-HCI?node-id=0-1&p=f", icon: Film },
+  {
+    title: "FigJam board",
+    href: "https://www.figma.com/board/eJV0RLI4pfxEZ70YkDWSWi/Fall2025-HCI?node-id=0-1&p=f",
+    icon: Film,
+  },
   { title: "Live Site / Landing", href: "/", icon: ExternalLink },
   { title: "Research Analysis Page", href: "/analysis", icon: FolderGit2 },
-  { title: "Concept Video", href: "https://www.youtube.com/watch?v=ENpX4WJylvM", icon: Film },
+  {
+    title: "Concept Video",
+    href: "https://www.youtube.com/watch?v=ENpX4WJylvM",
+    icon: Film,
+  },
   { title: "Demo Video", href: "https://youtu.be/2MR8o-YIrKk", icon: Film },
 ];
 
@@ -26,7 +52,9 @@ export default function DeliverablesPage() {
       <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl md:text-4xl font-bold">Deliverables</h1>
-          <Link href="/" className="text-sm underline">← Back to Home</Link>
+          <Link href="/" className="text-sm underline">
+            ← Back to Home
+          </Link>
         </div>
         <p className="text-slate-600 mt-2">
           The team's course submissions are listed below.
@@ -36,10 +64,18 @@ export default function DeliverablesPage() {
           <div className="grid md:grid-cols-2 gap-6 mt-4">
             {files.map((f) => (
               <Card key={f.title}>
-                <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2"><FileText className="h-4 w-4"/> {f.title}</CardTitle></CardHeader>
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <FileText className="h-4 w-4" /> {f.title}
+                  </CardTitle>
+                </CardHeader>
                 <CardContent className="flex items-center justify-between">
-                  <p className="text-sm text-slate-600">Download from the site.</p>
-                  <Button asChild size="sm"><a href={f.path}>Download</a></Button>
+                  <p className="text-sm text-slate-600">
+                    Download from the site.
+                  </p>
+                  <Button asChild size="sm">
+                    <a href={f.path}>Download</a>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -51,10 +87,18 @@ export default function DeliverablesPage() {
           <div className="grid md:grid-cols-2 gap-6 mt-4">
             {externals.map((e) => (
               <Card key={e.title}>
-                <CardHeader className="pb-2"><CardTitle className="text-base flex items-center gap-2">{<e.icon className="h-4 w-4"/>} {e.title}</CardTitle></CardHeader>
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-base flex items-center gap-2">
+                    {<e.icon className="h-4 w-4" />} {e.title}
+                  </CardTitle>
+                </CardHeader>
                 <CardContent className="flex items-center justify-between">
                   <p className="text-sm text-slate-600">Opens in a new tab.</p>
-                  <Button asChild size="sm" variant="secondary"><a href={e.href} target="_blank" rel="noreferrer">Open <ExternalLink className="h-4 w-4 ml-1"/></a></Button>
+                  <Button asChild size="sm" variant="secondary">
+                    <a href={e.href} target="_blank" rel="noreferrer">
+                      Open <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
             ))}

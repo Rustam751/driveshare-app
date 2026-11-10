@@ -27,11 +27,26 @@ export const teamMembers: Member[] = [
     email: "rustam@mukhtarov.dev",
     bio: "Builds the website, app and interactive artifacts; designs driver/host flows and HCI documentation.",
     blogs: [
-      { title: "Blog 1 – A Beginning", href: "https://russmukhtar751.blogspot.com/2025/09/a-beginning.html" },
-      { title: "Blog 2 – Understanding People", href: "https://russmukhtar751.blogspot.com/2025/09/understanding-people.html" },
-      { title: "Blog 3 – Bringing Ideas to Life", href: "https://russmukhtar751.blogspot.com/2025/10/bringing-ideas-to-life.html" },
-      { title: "Blog 4 – From Sketch to Screen", href: "https://russmukhtar751.blogspot.com/2025/10/from-sketch-to-screen.html" },
-      { title: "Blog 5 – Medium‑Fi & Testing", href: "https://russmukhtar751.blogspot.com/2025/11/from-medium-fidelity-to-polished-hi.html" },
+      {
+        title: "Blog 1 – A Beginning",
+        href: "https://russmukhtar751.blogspot.com/2025/09/a-beginning.html",
+      },
+      {
+        title: "Blog 2 – Understanding People",
+        href: "https://russmukhtar751.blogspot.com/2025/09/understanding-people.html",
+      },
+      {
+        title: "Blog 3 – Bringing Ideas to Life",
+        href: "https://russmukhtar751.blogspot.com/2025/10/bringing-ideas-to-life.html",
+      },
+      {
+        title: "Blog 4 – From Sketch to Screen",
+        href: "https://russmukhtar751.blogspot.com/2025/10/from-sketch-to-screen.html",
+      },
+      {
+        title: "Blog 5 – Medium‑Fi & Testing",
+        href: "https://russmukhtar751.blogspot.com/2025/11/from-medium-fidelity-to-polished-hi.html",
+      },
       { title: "Blog 6 – Final Reflection", href: "#" },
     ],
   },
@@ -40,17 +55,13 @@ export const teamMembers: Member[] = [
     name: "Bart Beltran",
     role: "Back‑End Developer",
     bio: "Explores data model, payments, and availability scheduling; supports research evidence collection.",
-    blogs: [
-      { title: "Blog Page", href: "https://bartbeltran1.blogspot.com/" },
-    ],
+    blogs: [{ title: "Blog Page", href: "https://bartbeltran1.blogspot.com/" }],
   },
   {
     slug: "sparsh-nayak",
     name: "Sparsh Nayak",
     role: "Full‑Stack Developer",
     bio: "Prototyping contributor; bridges front‑end and back‑end concerns; ensures research artifacts are linked.",
-    blogs: [
-      { title: "Blog – Interaction Design", href: "#" },
-    ],
+    blogs: [{ title: "Blog – Interaction Design", href: "#" }],
   },
 ];

@@ -1,10 +1,10 @@
-import { notFound } from "next/navigation";
+import { ArrowLeft, ExternalLink, User } from "lucide-react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ArrowLeft, User } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { teamMembers, type Member } from "../data"; // <-- FIXED
+import { teamMembers } from "../data"; // <-- FIXED
 
 export default function MemberPage({ params }: { params: { slug: string } }) {
   const member = teamMembers.find((m) => m.slug === params.slug);
@@ -14,10 +14,15 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
         <div className="flex items-center justify-between">
-          <Link href="/team" className="text-sm underline inline-flex items-center gap-1">
+          <Link
+            href="/team"
+            className="text-sm underline inline-flex items-center gap-1"
+          >
             <ArrowLeft className="h-4 w-4" /> Team
           </Link>
-          <Link href="/" className="text-sm underline">Home</Link>
+          <Link href="/" className="text-sm underline">
+            Home
+          </Link>
         </div>
 
         <div className="mt-6 grid md:grid-cols-[160px,1fr] gap-6 items-start">
@@ -30,7 +35,9 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
             <p className="text-slate-700 text-sm mt-3">{member.bio}</p>
             {member.email && (
               <p className="text-xs mt-2">
-                <a className="underline" href={`mailto:${member.email}`}>{member.email}</a>
+                <a className="underline" href={`mailto:${member.email}`}>
+                  {member.email}
+                </a>
               </p>
             )}
           </div>
@@ -46,7 +53,9 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
                     <CardTitle className="text-base">{b.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex items-center justify-between">
-                    <p className="text-sm text-slate-600">Reflection and deliverable link.</p>
+                    <p className="text-sm text-slate-600">
+                      Reflection and deliverable link.
+                    </p>
                     <Button asChild size="sm" variant="secondary">
                       <a href={b.href} target="_blank" rel="noreferrer">
                         Open <ExternalLink className="h-4 w-4 ml-1" />
