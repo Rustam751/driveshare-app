@@ -127,7 +127,6 @@ export default function AnalysisPage() {
         <p className="text-slate-600 mt-2">Data‑driven representation of our Affinity Themes, Empathy Map, and a current‑state Experience Map (no images).</p>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button asChild size="sm"><a href="https://driveshare-app.vercel.app/" target="_blank" rel="noreferrer">Live Prototype <ExternalLink className="h-4 w-4 ml-2"/></a></Button>
           <Button asChild variant="secondary" size="sm"><a href="https://www.figma.com/board/eJV0RLI4pfxEZ70YkDWSWi/Fall2025-HCI?node-id=0-1&p=f" target="_blank" rel="noreferrer">Open FigJam <ExternalLink className="h-4 w-4 ml-2"/></a></Button>
         </div>
 

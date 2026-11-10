@@ -51,10 +51,13 @@ export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-20">
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between mb-4">
           <h1 className="text-3xl md:text-4xl font-bold">DriveShare App Features</h1>
           <Link href="/" className="text-sm underline">← Back to Home</Link>
         </div>
+        <p className="mb-10 rounded-lg border bg-white px-4 py-3 text-sm text-slate-700">
+          These are concept features. None of them is implemented, and the pictures are illustrations, not screenshots of a working app.
+        </p>
 
         {/* DRIVERS */}
         <section className="mb-16">

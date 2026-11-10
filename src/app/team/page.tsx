@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Mail } from "lucide-react";
+import { Mail, User } from "lucide-react";
 import { teamMembers } from "./data";
 
 export type BlogLink = { title: string; href: string };
@@ -14,7 +13,6 @@ export type Member = {
   name: string;
   role: string;
   email?: string;
-  avatar?: string;
   bio: string;
   blogs: BlogLink[]; // Provide real links where available
 };
@@ -36,8 +34,8 @@ export default function TeamPage() {
                 <CardTitle className="text-lg">{m.name} <span className="text-slate-400 text-sm">— {m.role}</span></CardTitle>
               </CardHeader>
               <CardContent className="grid grid-cols-[96px,1fr] gap-4">
-                <div className="relative h-24 w-24 rounded-xl overflow-hidden border bg-slate-50">
-                  <Image src={m.avatar || "/team/avatar-fallback.png"} alt={m.name} fill className="object-cover"/>
+                <div className="grid h-24 w-24 place-items-center rounded-xl border bg-slate-50 text-slate-400">
+                  <User className="h-10 w-10" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-sm text-slate-700">{m.bio}</p>

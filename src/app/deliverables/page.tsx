@@ -13,10 +13,10 @@ const files = [
 ];
 
 const externals = [
-  { title: "Figma Prototype", href: "https://www.figma.com/board/eJV0RLI4pfxEZ70YkDWSWi/Fall2025-HCI?node-id=0-1&p=f", icon: Film },
+  { title: "FigJam board", href: "https://www.figma.com/board/eJV0RLI4pfxEZ70YkDWSWi/Fall2025-HCI?node-id=0-1&p=f", icon: Film },
   { title: "Live Site / Landing", href: "/", icon: ExternalLink },
   { title: "Research Analysis Page", href: "/analysis", icon: FolderGit2 },
-  { title: "Consept Video", href: "https://www.youtube.com/watch?v=ENpX4WJylvM", icon: Film },
+  { title: "Concept Video", href: "https://www.youtube.com/watch?v=ENpX4WJylvM", icon: Film },
   { title: "Demo Video", href: "https://youtu.be/2MR8o-YIrKk", icon: Film },
 ];
 
@@ -29,8 +29,7 @@ export default function DeliverablesPage() {
           <Link href="/" className="text-sm underline">← Back to Home</Link>
         </div>
         <p className="text-slate-600 mt-2">
-            All required submissions are organized below. If a file link returns 404,
-            place the file under <code className="font-mono">/public/deliverables/</code> with the matching name.
+          The team's course submissions are listed below.
         </p>
         <section className="mt-8">
           <h2 className="text-xl font-semibold">Documents</h2>

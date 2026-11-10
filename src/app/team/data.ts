@@ -5,7 +5,6 @@ export type Member = {
   name: string;
   role: string;
   email?: string;
-  avatar?: string;
   bio: string;
   blogs: BlogLink[];
 };
@@ -15,7 +14,6 @@ export const teamMembers: Member[] = [
     slug: "koji-miura",
     name: "Koji Miura",
     role: "Team Lead",
-    avatar: "/team/koji.jpg",
     bio: "Coordinates research, synthesizes insights, and manages milestones across prototype phases.",
     blogs: [
       { title: "Blog 1 – Project Pivot & Motivation", href: "#" },
@@ -27,7 +25,6 @@ export const teamMembers: Member[] = [
     name: "Rustam Mukhtarov",
     role: "Front‑End Developer",
     email: "rustam@mukhtarov.dev",
-    avatar: "/team/rustam.png",
     bio: "Builds the website, app and interactive artifacts; designs driver/host flows and HCI documentation.",
     blogs: [
       { title: "Blog 1 – A Beginning", href: "https://russmukhtar751.blogspot.com/2025/09/a-beginning.html" },
@@ -42,7 +39,6 @@ export const teamMembers: Member[] = [
     slug: "bart-beltran",
     name: "Bart Beltran",
     role: "Back‑End Developer",
-    avatar: "/team/bart.jpg",
     bio: "Explores data model, payments, and availability scheduling; supports research evidence collection.",
     blogs: [
       { title: "Blog Page", href: "https://bartbeltran1.blogspot.com/" },
@@ -52,7 +48,6 @@ export const teamMembers: Member[] = [
     slug: "sparsh-nayak",
     name: "Sparsh Nayak",
     role: "Full‑Stack Developer",
-    avatar: "/team/sparsh.jpg",
     bio: "Prototyping contributor; bridges front‑end and back‑end concerns; ensures research artifacts are linked.",
     blogs: [
       { title: "Blog – Interaction Design", href: "#" },

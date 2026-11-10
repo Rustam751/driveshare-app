@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ArrowLeft } from "lucide-react";
+import { ExternalLink, ArrowLeft, User } from "lucide-react";
 
 import { teamMembers, type Member } from "../data"; // <-- FIXED
 
@@ -22,8 +21,8 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="mt-6 grid md:grid-cols-[160px,1fr] gap-6 items-start">
-          <div className="relative h-40 w-40 rounded-2xl overflow-hidden border bg-slate-50">
-            <Image src={member.avatar || "/team/avatar-fallback.png"} alt={member.name} fill className="object-cover" />
+          <div className="grid h-40 w-40 place-items-center rounded-2xl border bg-slate-50 text-slate-400">
+            <User className="h-16 w-16" aria-hidden="true" />
           </div>
           <div>
             <h1 className="text-3xl font-bold">{member.name}</h1>
