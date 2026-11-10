@@ -25,7 +25,7 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
           </Link>
         </div>
 
-        <div className="mt-6 grid md:grid-cols-[160px,1fr] gap-6 items-start">
+        <div className="mt-6 grid md:grid-cols-[160px_1fr] gap-6 items-start">
           <div className="grid h-40 w-40 place-items-center rounded-2xl border bg-slate-50 text-slate-400">
             <User className="h-16 w-16" aria-hidden="true" />
           </div>
@@ -65,7 +65,7 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
                 </Card>
               ))
             ) : (
-              <p className="text-sm text-slate-600">Coming soon.</p>
+              <p className="text-sm text-slate-600">No blog posts linked.</p>
             )}
           </div>
         </section>

@@ -40,7 +40,7 @@ export default function TeamPage() {
                   <span className="text-slate-400 text-sm">— {m.role}</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="grid grid-cols-[96px,1fr] gap-4">
+              <CardContent className="grid grid-cols-[96px_1fr] gap-4">
                 <div className="grid h-24 w-24 place-items-center rounded-xl border bg-slate-50 text-slate-400">
                   <User className="h-10 w-10" aria-hidden="true" />
                 </div>

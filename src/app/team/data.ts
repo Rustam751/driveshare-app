@@ -15,10 +15,7 @@ export const teamMembers: Member[] = [
     name: "Koji Miura",
     role: "Team Lead",
     bio: "Coordinates research, synthesizes insights, and manages milestones across prototype phases.",
-    blogs: [
-      { title: "Blog 1 – Project Pivot & Motivation", href: "#" },
-      { title: "Blog 2 – User Research Plan", href: "#" },
-    ],
+    blogs: [],
   },
   {
     slug: "rustam-mukhtarov",
@@ -47,7 +44,10 @@ export const teamMembers: Member[] = [
         title: "Blog 5 – Medium‑Fi & Testing",
         href: "https://russmukhtar751.blogspot.com/2025/11/from-medium-fidelity-to-polished-hi.html",
       },
-      { title: "Blog 6 – Final Reflection", href: "#" },
+      {
+        title: "Blog 6 – The Final Chapter",
+        href: "https://russmukhtar751.blogspot.com/2025/12/the-final-chapter.html",
+      },
     ],
   },
   {
@@ -62,6 +62,6 @@ export const teamMembers: Member[] = [
     name: "Sparsh Nayak",
     role: "Full‑Stack Developer",
     bio: "Prototyping contributor; bridges front‑end and back‑end concerns; ensures research artifacts are linked.",
-    blogs: [{ title: "Blog – Interaction Design", href: "#" }],
+    blogs: [],
   },
 ];

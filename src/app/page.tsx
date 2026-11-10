@@ -19,7 +19,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 
 export default function DriveShareLanding() {
   const [open, setOpen] = useState(false);
@@ -411,19 +410,25 @@ export default function DriveShareLanding() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h3 className="text-xl md:text-2xl font-bold">
-              Want to test the concept?
+              Want to see the concept?
             </h3>
             <p className="text-slate-600 mt-2">
-              Leave your email and we’ll share a clickable demo and our study
-              plan.
+              Watch the demo video or open the course deliverables.
             </p>
-            <form
-              className="mt-4 grid gap-3 max-w-md"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <Input placeholder="you@example.com" />
-              <Button type="submit">Request demo</Button>
-            </form>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Button asChild>
+                <a
+                  href="https://youtu.be/2MR8o-YIrKk"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Watch the demo video
+                </a>
+              </Button>
+              <Button asChild variant="secondary">
+                <Link href="/deliverables">Open the deliverables</Link>
+              </Button>
+            </div>
           </div>
           <Card className="border-dashed">
             <CardHeader className="pb-2">
