@@ -1,89 +1,59 @@
-# DriveShare — Peer-to-Peer Parking Marketplace
+# DriveShare: HCI course project website
 
-DriveShare is a web prototype for a peer-to-peer parking marketplace where homeowners can rent out unused driveway space and drivers can reserve affordable parking spots.
+DriveShare was a four-person team project for a Human-Computer Interaction course (Fall 2025). The team explored a peer-to-peer driveway parking idea: homeowners rent out unused driveway space, and drivers reserve it.
 
-This project was built as a human-computer interaction and product design prototype, focusing on user flows, marketplace trust, driver/homeowner needs, and a clean responsive interface.
+This repository is the project website. It presents the concept, the user research and the course deliverables. It is not a working parking app: there is no booking, payment or account system behind it.
 
-Live Demo: https://driveshare-app.vercel.app/
+Project site: https://driveshare.mukhtarov.dev/
 
----
+## My role
 
-## Problem
+I was the team's front-end developer. I built this website with Next.js, React, TypeScript and Tailwind CSS.
 
-Urban drivers often waste time circling for parking, while many homeowners have unused driveway space. DriveShare explores a two-sided marketplace where:
+The product concept, the user research and the prototypes were team work.
 
-- Drivers can find cheaper, nearby private parking
-- Homeowners can earn passive income from unused driveway space
-- Reservations are time-boxed to reduce conflicts and overstay issues
+## What the team did
 
----
+- Interviewed students about parking and grouped the findings into four themes
+- Wrote four personas, an empathy map and an experience map
+- Made a paper prototype, then medium- and high-fidelity prototypes in Figma
+- Tested the medium-fidelity prototype with three think-aloud participants
+- Reviewed its own design against Nielsen's 10 usability heuristics
 
-## Features
+## What is on the site
 
-### For Drivers
+- `/`: the concept (problem, how it would work, trust and safety)
+- `/features`: the intended driver and homeowner features
+- `/analysis`: research themes, personas, empathy map and experience map
+- `/deliverables`: six course documents, the FigJam board and two videos
+- `/team`: the team, with links to course blogs
+
+## Intended features (concept, not implemented)
+
+For drivers:
 
 - Search for nearby driveway parking
-- View price and availability windows
-- Understand house rules before booking
-- Reserve a spot and follow navigation-style instructions
+- See price and availability windows
+- Read the house rules before booking
+- Reserve a spot and get directions
 
-### For Homeowners
+For homeowners:
 
-- List driveway availability
+- List a driveway and its availability
 - Set price and time windows
-- Communicate parking rules clearly
+- State parking rules
 - Earn income from unused space
 
-### Product / HCI Features
+## Tech stack
 
-- Driver and homeowner user flows
-- Research analysis page
-- Feature exploration page
-- Team and deliverables pages
-- Responsive layout for desktop and mobile
-- Clear trust, safety, and policy messaging
+- Next.js 15 (App Router), React 19, TypeScript
+- Tailwind CSS 4, Lucide icons
+- Biome for linting and formatting
+- Deployed on Vercel
 
----
+## Run locally
 
-## Tech Stack
-
-- **Framework:** Next.js
-- **Language:** TypeScript
-- **UI:** React, Tailwind CSS
-- **Icons:** Lucide React
-- **Design Focus:** HCI, UX research, product prototyping
-- **Deployment:** Vercel
-
----
-
-## My Contributions
-
-I designed and implemented the DriveShare prototype as a product-focused web application.
-
-My work included:
-
-- Defining the product concept and two-sided marketplace flow
-- Designing driver and homeowner user experiences
-- Building the landing page and navigation structure
-- Creating research, feature, team, and deliverables pages
-- Implementing responsive UI with Next.js, React, and Tailwind
-- Translating HCI research findings into product features
-
----
-
-## Project Structure
-
-```text
-driveshare-app/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx
-│   │   ├── features/
-│   │   ├── analysis/
-│   │   ├── team/
-│   │   └── deliverables/
-│   ├── components/
-│   └── lib/
-├── public/
-├── package.json
-└── README.md
+```bash
+npm install
+npm run dev
+```
